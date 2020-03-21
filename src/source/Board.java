@@ -16,10 +16,10 @@ import javax.swing.Timer;
 
 public class Board extends JPanel implements KeyListener {
 	private BufferedImage blocks;
-	private BufferedImage bg;
+	private BufferedImage background;
 	private BufferedImage frame2;
 	// gameover new
-	private BufferedImage gO;
+	private BufferedImage GameOver;
 	private int score = 0;
 	private String scoreString = "0";
 	private final int indentY = 25 * 2;
@@ -56,14 +56,14 @@ public class Board extends JPanel implements KeyListener {
 	public Board() {
 		setBackground(Color.getHSBColor(h, s, b));
 		try {
-			bg = ImageIO.read(Board.class.getResource("/totoro.png"));
+			background = ImageIO.read(Board.class.getResource("/totoro.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 		// new gameOver
 		try {
-			gO = ImageIO.read(Board.class.getResource("/game_over.jpg"));
+			GameOver = ImageIO.read(Board.class.getResource("/game_over.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
