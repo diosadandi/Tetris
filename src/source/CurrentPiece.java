@@ -31,16 +31,19 @@ public class CurrentPiece extends Piece {
 		}
 	}
 
-	public void update() {
-		time += System.currentTimeMillis() - lastTime;
-		lastTime = System.currentTimeMillis();
-		// System.out.println(board.getBoard()[((cY - 70) / Board.BLOCKSIZE()) +
-		// 1][((cX - 20) / Board.BLOCKSIZE())]);
-		if (board.isShiftPressed()) {
-			board.getPiece();
-		}
-		if (collisionY) {
-			if (time > currentSpeed) {
+	
+	time += System.currentTimeMillis() - lastTime;
+	lastTime = System.currentTimeMillis();
+	// System.out.println(board.getBoard()[((cY - 70) / Board.BLOCKSIZE()) +
+	// 1][((cX - 20) / Board.BLOCKSIZE())]);
+		
+	
+	public void updateShitPresses {
+		board.getPiece();
+	}
+	
+	public void updateCollision {
+		if (time > currentSpeed) {
 				time = 0;
 			}
 			for (int row = 0; row < coords.length; row++)
@@ -50,10 +53,10 @@ public class CurrentPiece extends Piece {
 								+ row][((cX - board.getIndentX()) / Board.BLOCKSIZE) + col] = color;
 			checkLine();
 			board.getPiece();
-		}
-
-		if (cX + dX >= board.getIndentX() && cX + dX + coords[0].length * Board.BLOCKSIZE <= board.getBorderX()) {
-			for (int row = 0; row < coords.length; row++)
+	}
+	
+	public void updateBoard {
+		for (int row = 0; row < coords.length; row++)
 				for (int col = 0; col < coords[row].length; col++)
 					if (coords[row][col] != 0) {
 						if (board.getBoard()[((cY - board.getIndentY()) / Board.BLOCKSIZE)
@@ -63,9 +66,10 @@ public class CurrentPiece extends Piece {
 					}
 			if (!collisionX)
 				cX += dX;
-		}
-		if (cY + Board.BLOCKSIZE + (coords.length * Board.BLOCKSIZE) <= board.getBorderY()) {
-			for (int row = 0; row < coords.length; row++)
+	}
+	
+	public void updateBLOCKSIZE {
+		for (int row = 0; row < coords.length; row++)
 				for (int col = 0; col < coords[row].length; col++)
 					if (coords[row][col] != 0) {
 						if (board.getBoard()[((cY - board.getIndentY()) / Board.BLOCKSIZE) + row
