@@ -12,15 +12,18 @@ import javax.imageio.ImageIO;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+class BufferedImage(){
+	private BufferedImage up;
+	private BufferedImage down;
+	private BufferedImage right;
+	private BufferedImage left;
+	private BufferedImage shift;
+	private BufferedImage space;
+	private BufferedImage icon;
+	private BufferedImage icon1;
+}
+
 public class HowToPlayPanel extends JPanel {
-	BufferedImage up;
-	BufferedImage down;
-	BufferedImage right;
-	BufferedImage left;
-	BufferedImage shift;
-	BufferedImage space;
-	BufferedImage icon;
-	BufferedImage icon1;
 	int stat = 0;
 	JLabel lbl_title, lbl_up, lbl_down, lbl_right, lbl_left, lbl_shift, lbl_space, lbl_space2, back;
 
