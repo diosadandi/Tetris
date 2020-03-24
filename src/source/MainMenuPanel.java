@@ -18,11 +18,14 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+class BufferedImage(){
+	private BufferedImage cube;
+	private BufferedImage img;
+}
+
 public class MainMenuPanel extends JPanel {
 	JLabel title, upTitle, upUpTitle;
 	JLabel play, exit, howToPlay;
-	BufferedImage cube;
-	BufferedImage img;
 	Clip clip;
 	private String highscore = "0";
 	private int currHighscore = 0;
